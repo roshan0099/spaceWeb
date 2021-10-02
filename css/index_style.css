@@ -20,6 +20,11 @@ a {
 
 .header{
   border-bottom: 1px solid #E2E8F0;
+  transition : 1s;
+}
+
+.header:hover{
+  background-color : rgb(0,0,0,0.1)
 }
 
 .navbar {
@@ -100,3 +105,64 @@ a {
   }
 
 }
+
+.left{
+  max-width : 500px;
+  padding : 2%; 
+}
+
+.right{
+  text-align : center;
+  align-items : center;
+  flex-grow : 1;
+  padding : 2%;
+}
+.home-container{
+
+  display : flex;
+  flex-direction : row;
+  margin : 0 10% ;
+  flex-wrap : wrap;
+  padding : 4% 0;
+  height : 100%;
+}
+
+h1{
+  text-align : center;
+}
+
+.left-side-heading{
+  text-align : left;
+}
+
+.space-checkout{
+  resize : none;
+  outline : none;
+  height : 100%;
+  width : 100%;
+/*   scrollbar-width : thin; */
+}
+
+ ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+::-webkit-scrollbar-track {
+    background: rgb(179, 177, 177);
+    border-radius: 1px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(136, 136, 136);
+    border-radius: 1px;
+  }
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(100, 100, 100);
+    border-radius: 1px;
+  }
+
+::-webkit-scrollbar-thumb:active {
+    background: rgb(68, 68, 68);
+    border-radius: 10px;
+  }
