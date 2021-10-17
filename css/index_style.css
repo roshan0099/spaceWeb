@@ -13,7 +13,7 @@ height : 100%;
 }
 html {
   font-size: 62.5%;
-  
+  font-family: "Courier New", monospace;
 }
 
 li {
@@ -106,6 +106,7 @@ a {
   max-width : 500px;
   padding : 2%; 
    flex-grow : 1;
+  
 
 }
 
@@ -122,6 +123,10 @@ h1{
   text-align : center;
 }
 
+#play-ground{
+  font-size : 23px;
+}
+
 .left-side-heading{
   text-align : left;
   font-size : 29px;
@@ -135,6 +140,7 @@ h1{
   width : 100%;
   padding : 2%;
   min-height : 170px;
+  border-radius: 0px 0px 20px 0px;
 /*   scrollbar-width : thin; */
 }
 
@@ -155,11 +161,14 @@ h1{
   background: #3465a4;
   padding : 2%;
   box-shadow : 5px 10px 8px grey;
+  border-radius: 0px 0px 20px 0px;
+    font-family: "Courier New", monospace;
 }
 
 #logo-area:hover{
   box-shadow: 0px 0px;
    text-shadow: 0px 0px black;
+     
 }
 
 #space{
