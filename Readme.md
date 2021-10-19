@@ -4,4 +4,4 @@ Space is a simple yet complex esolang that was created initially using NULL to c
 
 ## SpaceWeb
 
-It's a web app where people can check out space, in other words an online interpreter.
+A website with online interpreter and docs for space, incorprated with the information regarding NULL (language in which space prototype was written https://github.com/roshan0099/null).
