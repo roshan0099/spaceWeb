@@ -6,7 +6,7 @@
 }
 
 body{
-/*    background-color :rgb(0,0,0,0.1); */
+   background-color : rgb(255,255,240,0.7);
 
 height : 100%;
 /*   background-image: linear-gradient(to right,#41b3a3, #e27d60); */
@@ -196,6 +196,10 @@ footer {
    text-align: center;
 }
 
+#display-btn-area{
+  display: flex;
+  flex-direction: row;
+}
 
 @media only screen and (max-width: 768px) {
   .nav-menu {
