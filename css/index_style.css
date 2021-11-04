@@ -9,7 +9,7 @@
 }
 
 body{
-   background-color : rgb(255,255,240,0.1);
+   background-color : rgb(255,255,240,);
 
 height : 100%;
 /*   background-image: linear-gradient(to right,#41b3a3, #e27d60); */
@@ -241,7 +241,38 @@ h1{
 
 #op-box{
   width : 100%;
+  outline : none;
+  resize : none;
+  padding : 6px;
+  font-size : 17px;
+/*   color : blueviolet;  */
+  border : solid 0.01px  #7b9cfa; 
 }
+
+
+
+
+
+#sub-menu{
+  padding : 0% 10%;
+  display : flex;
+  flex-direction : row;
+  justify-content : space-around;
+  font-size : 18px;
+}
+
+.option:hover{
+  cursor : pointer;
+  border-bottom : solid 1px green;
+  
+}
+
+#info-space{
+  font-size : 14px;
+  padding : 1% 13%;
+  margin : 9px 0px;
+}
+
 @media only screen and (max-width: 768px) {
   .nav-menu {
       position: fixed;
@@ -317,3 +348,6 @@ h1{
     width : 100%;
     background-color: black;
   }
+
+
+

@@ -2,6 +2,8 @@ var space_checkout = document.getElementsByClassName("space-checkout")[0]
 var run_butn = document.getElementById("run")
 var display_answer = document.getElementById("display-btn-area")
 var op_box = document.getElementById("op-display")
+var sub_menu = document.getElementById("sub-menu")
+
 
 function code_check(symbol){
     var symbols = [" ","^","/","\\","}","{","_"]
@@ -103,6 +105,66 @@ run_butn.addEventListener("click", () => {
 
 
 })
+
+
+// slide
+var sub_menu_class = document.getElementsByClassName("option")
+var space_op1 = document.getElementById("Space-option1")
+var space_op2 = document.getElementById("Space-option2")
+var space_op3 = document.getElementById("Space-option3")
+var options = document.getElementsByClassName("option")
+
+options[0].style.borderBottom = "solid 1px green"
+space_op2.style.display = "none"
+space_op3.style.display = "none"
+// var space_op1 = document.getElementById("Space-option1")
+
+sub_menu.addEventListener('click',(e) => {
+  // var classNameOp = 
+	var clicked_id = e.target.id
+
+  	switch(clicked_id){
+		case "option1":
+			space_op3.style.display = "none"
+			space_op2.style.display = "none"
+			space_op1.style.display = "block"
+
+			options[1].style.borderBottom = ""
+			options[2].style.borderBottom = ""
+			options[0].style.borderBottom = "solid 1px green"
+		
+		break
+
+		case "option2":
+			space_op3.style.display = "none"
+			space_op1.style.display = "none"
+			space_op2.style.display = "block"
+
+			options[0].style.borderBottom = ""
+			options[2].style.borderBottom = ""
+			options[1].style.borderBottom = "solid 1px green"
+			
+			break
+
+		case "option3":
+			space_op1.style.display = "none"
+			space_op2.style.display = "none"
+			space_op3.style.display = "block"
+
+			options[0].style.borderBottom = ""
+			options[1].style.borderBottom = ""
+			options[2].style.borderBottom = "solid 1px green"
+		
+		break
+
+  }
+
+
+})
+
+
+
+
 
 
 
@@ -274,3 +336,6 @@ window.addEventListener( 'resize', function() {
   
   init();
 } )
+
+
+
