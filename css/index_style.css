@@ -5,10 +5,11 @@
   box-sizing: border-box;
   color : white;
 
-  background-color : black;
+  
 }
 
 body{
+  background-color : black;
    background-color : rgb(255,255,240,);
 
 height : 100%;
@@ -148,6 +149,7 @@ h1{
   width : 100%;
   padding : 2%;
   min-height : 185px;
+  background-color : black;
 /*   border-radius: 0px 0px 20px 0px; */
 /*   scrollbar-width : thin; */
 }
@@ -199,12 +201,14 @@ h1{
 
 #footer {
 /*    position: fixed; */
-   left: 0;
-   bottom: 0;
+/*    left: 0; */
+/*    bottom: 0; */
    width: 100%;
-   background-color: red;
+   background-color: #0d3345;
    color: white;
    text-align: center;
+   min-height : 250px;
+   align-items : center;
 }
 
 #display-btn-area{
@@ -215,9 +219,11 @@ h1{
 
 #op-box{
   flex-grow : 1;
+  background-color : black;
+  color : white;
 }
 #run{
-  
+  background-color : black;
   border: solid 1px;
   color: white;
   padding: 10px 24px;
@@ -258,7 +264,8 @@ h1{
   display : flex;
   flex-direction : row;
   justify-content : space-around;
-  font-size : 18px;
+  font-size : 19px;
+ 
 }
 
 .option:hover{
@@ -268,10 +275,42 @@ h1{
 }
 
 #info-space{
-  font-size : 14px;
-  padding : 1% 13%;
+  font-size : 15px;
+  padding : 2% 13%;
   margin : 9px 0px;
 }
+
+#space-portion{
+   background-color : rgb(255,255,255,0.1);
+   padding-top : 15px;
+}
+
+#null-area{
+  display : grid;
+  grid-template-columns : 20% auto ;
+  align-items : center;
+  padding : 2% 14%;
+}
+
+
+.null-desp{
+  font-size : 15px;
+
+}
+
+.title-null{
+  padding : 0px 5px;
+  font-size : 19px;
+}
+
+#null-area2{
+   background-color : rgb(255,255,255,0.1);
+  display : grid;
+  grid-template-columns : 20% auto ;
+  align-items : center;
+  padding : 2% 13%;
+}
+
 
 @media only screen and (max-width: 768px) {
   .nav-menu {
@@ -312,6 +351,35 @@ h1{
   padding : 2%;
 
   }
+
+  #null-area{
+  display : flex;
+  flex-direction : column;
+
+  align-items : center;
+  padding : 3% 14%;
+  }
+
+   #null-area2{
+  display : flex;
+  flex-direction : column;
+  background-color: rgb(255,255,255,0.1);
+  align-items : center;
+  padding : 3% 14%;
+  }
+
+  
+  .null-desp{
+  font-size : 14px;
+
+}
+
+.title-null{
+  padding-bottom : 5%;
+  font-size : 18px;
+}
+
+
 }
 
 
@@ -351,3 +419,67 @@ h1{
 
 
 
+/* text animation */
+
+.wordCarousel {
+  font-size: 36px;
+  font-weight: 100;
+  color: #eee;
+  
+}
+.wordCarousel>div{
+  
+      overflow: hidden;
+      position: relative;
+      float: left;
+      height: 65px;
+      padding-top: 10px;
+      margin-top: 150px;
+     
+  }
+li {
+          font-family: Serif;
+          color: #eee;
+          font-weight: 700;
+          padding: 0 10px;
+          height: 45px;
+          margin-bottom: 45px;
+          display: block;
+      }
+
+.flip2 { animation: flip2 6s cubic-bezier(0.23, 1, 0.32, 1.2) infinite; }
+.flip3 { animation: flip3 8s cubic-bezier(0.23, 1, 0.32, 1.2) infinite; }
+.flip4 { animation: flip4 10s cubic-bezier(0.23, 1, 0.32, 1.2) infinite; }
+
+@keyframes flip2 {
+  0% { margin-top: -180px; }
+  5% { margin-top: -90px;  }
+  50% { margin-top: -90px; }
+  55% { margin-top: 0px; }
+  99.99% { margin-top: 0px; }
+  100% { margin-top: -270px; }
+}
+
+@keyframes flip3 {
+  0% { margin-top: -270px; }
+  5% { margin-top: -180px; }
+  33% { margin-top: -180px; }
+  38% { margin-top: -90px; }
+  66% { margin-top: -90px; }
+  71% { margin-top: 0px; }
+  99.99% { margin-top: 0px; }
+  100% { margin-top: -270px; }
+}
+
+@keyframes flip4 {
+  0% { margin-top: -360px; }
+  5% { margin-top: -270px; }
+  25% { margin-top: -270px; }
+  30% { margin-top: -180px; }
+  50% { margin-top: -180px; }
+  55% { margin-top: -90px; }
+  75% { margin-top: -90px; }
+  80% { margin-top: 0px; }
+  99.99% { margin-top: 0px; }
+  100% { margin-top: -270px; }
+}
