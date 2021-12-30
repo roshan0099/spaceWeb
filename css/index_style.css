@@ -34,7 +34,8 @@ a {
 }
 
 .header:hover{
-  background-color : rgb(0,0,0,0.1);
+  background-color : rgb(0,0,0,0.7);
+    border-bottom: 1px solid green;
 }
 
 .navbar {
@@ -46,14 +47,13 @@ a {
   transition : 2s;
 }
 
-/* .navbar:hover{ */
-/*   background-color : rgb(0,0,0,0.1); */
 
-/* } */
+
 
 .drop {
   display: none;
 }
+
 
 .options {
   display: block;
@@ -63,16 +63,21 @@ a {
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   background-color: #101010;
+   align-items: center;
 }
 
 .nav-menu {
+  
   display: flex;
   justify-content: space-between;
   align-items: center;
+   line-height: 45px;
 }
 
 .nav-item {
-  margin-left: 5rem;
+  font-family: "Courier New", monospace;
+  margin : 0px;
+   align-items: center;
 }
 
 .nav-link{
@@ -88,7 +93,7 @@ a {
 
 .nav-logo {
   font-size: 2.1rem;
-  font-weight: 500;
+  
  
 }
 
