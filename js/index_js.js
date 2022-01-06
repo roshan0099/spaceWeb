@@ -168,174 +168,296 @@ sub_menu.addEventListener('click',(e) => {
 
 
 
-//canvas 
+// //canvas 
 
-var w = c.width = window.innerWidth,
-    h = c.height = window.innerHeight,
-    ctx = c.getContext( '2d' ),
+// var w = c.width = window.innerWidth,
+//     h = c.height = window.innerHeight,
+//     ctx = c.getContext( '2d' ),
     
-    minDist = 10,
-    maxDist = 30,
-    initialWidth = 2,
-    maxLines = 9,
-    initialLines = 9,
-    speed = 3,
+//     minDist = 10,
+//     maxDist = 30,
+//     initialWidth = 2,
+//     maxLines = 9,
+//     initialLines = 9,
+//     speed = 3,
     
-    lines = [],
-    frame = 0,
-    timeSinceLast = 0,
+//     lines = [],
+//     frame = 0,
+//     timeSinceLast = 0,
     
-    dirs = [
-   // straight x, y velocity
-      [ 0, 1 ],
-      [ 1, 0 ],
-      [ 0, -1 ],
-    	[ -1, 0 ],
-   // diagonals, 0.7 = sin(PI/4) = cos(PI/4)
-      [ .7, .7 ],
-      [ .7, -.7 ],
-      [ -.7, .7 ],
-      [ -.7, -.7]
-    ],
-    starter = { // starting parent line, just a pseudo line
+//     dirs = [
+//    // straight x, y velocity
+//       [ 0, 1 ],
+//       [ 1, 0 ],
+//       [ 0, -1 ],
+//     	[ -1, 0 ],
+//    // diagonals, 0.7 = sin(PI/4) = cos(PI/4)
+//       [ .7, .7 ],
+//       [ .7, -.7 ],
+//       [ -.7, .7 ],
+//       [ -.7, -.7]
+//     ],
+//     starter = { // starting parent line, just a pseudo line
       
-      x: w / 2,
-      y: h / 2,
-      vx: 0,
-      vy: 0,
-      width: initialWidth
-    };
+//       x: w / 2,
+//       y: h / 2,
+//       vx: 0,
+//       vy: 0,
+//       width: initialWidth
+//     };
 
-function init() {
+// function init() {
   
-  lines.length = 0;
+//   lines.length = 0;
   
-  for( var i = 0; i < initialLines; ++i )
-    lines.push( new Line( starter ) );
+//   for( var i = 0; i < initialLines; ++i )
+//     lines.push( new Line( starter ) );
   
-  ctx.fillStyle = '#0000';
-  ctx.fillRect( 0, 0, w, h );
+//   ctx.fillStyle = '#0000';
+//   ctx.fillRect( 0, 0, w, h );
   
-  // if you want a cookie ;)
-  // ctx.lineCap = 'round';
-}
-function getColor( x ) {
+//   // if you want a cookie ;)
+//   // ctx.lineCap = 'round';
+// }
+// function getColor( x ) {
   
-  return 'hsl( hue, 80%, 50% )'.replace(
-  	'hue', x / w * 360 + frame
-  );
-}
-function anim() {
+//   return 'hsl( hue, 80%, 50% )'.replace(
+//   	'hue', x / w * 360 + frame
+//   );
+// }
+// function anim() {
   
-  window.requestAnimationFrame( anim );
+//   window.requestAnimationFrame( anim );
   
-  ++frame;
+//   ++frame;
   
-  ctx.shadowBlur = 0;
-  ctx.fillStyle = 'rgba(0,0,0,.02)';
-  ctx.fillRect( 0, 0, w, h );
-  ctx.shadowBlur = .5;
+//   ctx.shadowBlur = 0;
+//   ctx.fillStyle = 'rgba(0,0,0,.02)';
+//   ctx.fillRect( 0, 0, w, h );
+//   ctx.shadowBlur = .5;
   
-  for( var i = 0; i < lines.length; ++i ) 
+//   for( var i = 0; i < lines.length; ++i ) 
     
-    if( lines[ i ].step() ) { // if true it's dead
+//     if( lines[ i ].step() ) { // if true it's dead
       
-      lines.splice( i, 1 );
-      --i;
+//       lines.splice( i, 1 );
+//       --i;
       
+//     }
+  
+//   // spawn new
+  
+//   ++timeSinceLast
+  
+//   if( lines.length < maxLines && timeSinceLast > 10 && Math.random() < .5 ) {
+    
+//     timeSinceLast = 0;
+    
+//     lines.push( new Line( starter ) );
+    
+//     // cover the middle;
+//     ctx.fillStyle = ctx.shadowColor = getColor( starter.x );
+//     ctx.beginPath();
+//     ctx.arc( starter.x, starter.y, initialWidth, 0, Math.PI * 2 );
+//     ctx.fill();
+//   }
+// }
+
+// function Line( parent ) {
+  
+//   this.x = parent.x | 0;
+//   this.y = parent.y | 0;
+//   this.width = parent.width / 1.25;
+  
+//   do {
+    
+//     var dir = dirs[ ( Math.random() * dirs.length ) |0 ];
+//     this.vx = dir[ 0 ];
+//     this.vy = dir[ 1 ];
+    
+//   } while ( 
+//     ( this.vx === -parent.vx && this.vy === -parent.vy ) || ( this.vx === parent.vx && this.vy === parent.vy) );
+  
+//   this.vx *= speed;
+//   this.vy *= speed;
+  
+//   this.dist = ( Math.random() * ( maxDist - minDist ) + minDist );
+  
+// }
+// Line.prototype.step = function() {
+  
+//   var dead = false;
+  
+//   var prevX = this.x,
+//       prevY = this.y;
+  
+//   this.x += this.vx;
+//   this.y += this.vy;
+  
+//   --this.dist;
+  
+//   // kill if out of screen
+//   if( this.x < 0 || this.x > w || this.y < 0 || this.y > h )
+//     dead = true;
+  
+//   // make children :D
+//   if( this.dist <= 0 && this.width > 1 ) {
+    
+//     // keep yo self, sometimes
+//     this.dist = Math.random() * ( maxDist - minDist ) + minDist;
+    
+//     // add 2 children
+//     if( lines.length < maxLines ) lines.push( new Line( this ) );
+//     if( lines.length < maxLines && Math.random() < .5 ) lines.push( new Line( this ) );
+    
+//     // kill the poor thing
+//     if( Math.random() < .2 ) dead = true;
+//   }
+  
+//   ctx.strokeStyle = ctx.shadowColor = getColor( this.x );
+//   ctx.beginPath();
+//   ctx.lineWidth = this.width;
+//   ctx.moveTo( this.x, this.y );
+//   ctx.lineTo( prevX, prevY );
+//   ctx.stroke();
+  
+//   if( dead ) return true
+// }
+
+// init();
+// anim();
+
+// window.addEventListener( 'resize', function() {
+  
+//   w = c.width = window.innerWidth;
+//   h = c.height = window.innerHeight;
+//   starter.x = w / 2;
+//   starter.y = h / 2;
+  
+//   init();
+// } )
+
+
+
+
+
+
+
+
+
+/////////////////////////////////
+
+
+
+particlesJS("particles-js", {
+  "particles": {
+    "number": {
+      "value": 290,
+      "density": {
+        "enable": true,
+        "value_area": 800
+      }
+    },
+    "color": {
+      "value": "#ffffff"
+    },
+    "shape": {
+      "type": "triangle",
+      "stroke": {
+        "width": 0,
+        "color": "#000000"
+      },
+      "polygon": {
+        "nb_sides": 10
+      },
+      "image": {
+        "src": "img/github.svg",
+        "width": 100,
+        "height": 100
+      }
+    },
+    "opacity": {
+      "value": 0.5,
+      "random": false,
+      "anim": {
+        "enable": false,
+        "speed": 1,
+        "opacity_min": 0.1,
+        "sync": false
+      }
+    },
+    "size": {
+      "value": 3,
+      "random": true,
+      "anim": {
+        "enable": false,
+        "speed": 40,
+        "size_min": 0.1,
+        "sync": false
+      }
+    },
+    "line_linked": {
+      "enable": true,
+      "distance": 150,
+      "color": "#ffffff",
+      "opacity": 0.4,
+      "width": 1
+    },
+    "move": {
+      "enable": true,
+      "speed": 6,
+      "direction": "none",
+      "random": true,
+      "straight": false,
+      "out_mode": "out",
+      "bounce": true,
+      "attract": {
+        "enable": false,
+        "rotateX": 600,
+        "rotateY": 1200
+      }
     }
-  
-  // spawn new
-  
-  ++timeSinceLast
-  
-  if( lines.length < maxLines && timeSinceLast > 10 && Math.random() < .5 ) {
-    
-    timeSinceLast = 0;
-    
-    lines.push( new Line( starter ) );
-    
-    // cover the middle;
-    ctx.fillStyle = ctx.shadowColor = getColor( starter.x );
-    ctx.beginPath();
-    ctx.arc( starter.x, starter.y, initialWidth, 0, Math.PI * 2 );
-    ctx.fill();
-  }
-}
-
-function Line( parent ) {
-  
-  this.x = parent.x | 0;
-  this.y = parent.y | 0;
-  this.width = parent.width / 1.25;
-  
-  do {
-    
-    var dir = dirs[ ( Math.random() * dirs.length ) |0 ];
-    this.vx = dir[ 0 ];
-    this.vy = dir[ 1 ];
-    
-  } while ( 
-    ( this.vx === -parent.vx && this.vy === -parent.vy ) || ( this.vx === parent.vx && this.vy === parent.vy) );
-  
-  this.vx *= speed;
-  this.vy *= speed;
-  
-  this.dist = ( Math.random() * ( maxDist - minDist ) + minDist );
-  
-}
-Line.prototype.step = function() {
-  
-  var dead = false;
-  
-  var prevX = this.x,
-      prevY = this.y;
-  
-  this.x += this.vx;
-  this.y += this.vy;
-  
-  --this.dist;
-  
-  // kill if out of screen
-  if( this.x < 0 || this.x > w || this.y < 0 || this.y > h )
-    dead = true;
-  
-  // make children :D
-  if( this.dist <= 0 && this.width > 1 ) {
-    
-    // keep yo self, sometimes
-    this.dist = Math.random() * ( maxDist - minDist ) + minDist;
-    
-    // add 2 children
-    if( lines.length < maxLines ) lines.push( new Line( this ) );
-    if( lines.length < maxLines && Math.random() < .5 ) lines.push( new Line( this ) );
-    
-    // kill the poor thing
-    if( Math.random() < .2 ) dead = true;
-  }
-  
-  ctx.strokeStyle = ctx.shadowColor = getColor( this.x );
-  ctx.beginPath();
-  ctx.lineWidth = this.width;
-  ctx.moveTo( this.x, this.y );
-  ctx.lineTo( prevX, prevY );
-  ctx.stroke();
-  
-  if( dead ) return true
-}
-
-init();
-anim();
-
-window.addEventListener( 'resize', function() {
-  
-  w = c.width = window.innerWidth;
-  h = c.height = window.innerHeight;
-  starter.x = w / 2;
-  starter.y = h / 2;
-  
-  init();
-} )
-
+  },
+  "interactivity": {
+    "detect_on": "window",
+    "events": {
+      "onhover": {
+        "enable": true,
+        "mode": "repulse"
+      },
+      "onclick": {
+        "enable": true,
+        "mode": "push"
+      },
+      "resize": true
+    },
+    "modes": {
+      "grab": {
+        "distance": 140,
+        "line_linked": {
+          "opacity": 1
+        }
+      },
+      "bubble": {
+        "distance": 400,
+        "size": 100,
+        "duration": 2,
+        "opacity": 8,
+        "speed": 3
+      },
+      "repulse": {
+        "distance": 100,
+        "duration": 0.4
+      },
+      "push": {
+        "particles_nb": 4
+      },
+      "remove": {
+        "particles_nb": 2
+      }
+    }
+  },
+  "retina_detect": true
+});
 
 

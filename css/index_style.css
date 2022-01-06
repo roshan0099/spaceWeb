@@ -76,7 +76,7 @@ a {
 
 .nav-item {
   font-family: "Courier New", monospace;
-  margin : 0px;
+  margin : 0px 15px;
    align-items: center;
 }
 
@@ -501,3 +501,35 @@ h1{
   99.99% { margin-top: 0px; }
   100% { margin-top: -270px; }
 }
+
+
+
+
+
+
+
+
+section{
+	font-size:3rem;
+	position:relative;
+	height:100vh;
+	
+}
+#section-h1{
+  position:absolute;
+  top:40%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  letter-spacing: 0.5em;
+}
+
+
+
+section:nth-child(odd){
+
+	color:white;
+	  background-color: #b61924;
+
+}
+
+
