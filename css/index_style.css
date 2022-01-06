@@ -208,12 +208,40 @@ h1{
 /*    position: fixed; */
 /*    left: 0; */
 /*    bottom: 0; */
+   padding : 0% 5%; 
+   display: flex;
+   flex-wrap : wrap;
+   justify-content : space-between;
    width: 100%;
    background-color: #0d3345;
    color: white;
    text-align: center;
    min-height : 250px;
    align-items : center;
+}
+
+#null-logo{
+  min-width : 150px; 
+  min-height : 150px;
+  padding-top : 50px;
+}
+
+#null-img{
+  cursor : pointer;
+}
+
+#gh-logo{
+
+  align-items  : center;
+  min-width : 150px;
+  min-height : 150px; 
+   padding-top : 50px;
+   
+}
+
+#gh-img{
+  border-radius : 50%;
+  cursor : pointer;
 }
 
 #display-btn-area{
@@ -398,6 +426,15 @@ h1{
   margin : 11px 0px;
 }
 
+#gh-logo{
+
+  align-items  : center;
+  min-width : 150px;
+  min-height : 150px; 
+   padding-top : 50px;
+   margin-left : 30%; 
+}
+
 }
 
 
@@ -531,5 +568,15 @@ section:nth-child(odd){
 	  background-color: #b61924;
 
 }
+
+
+
+
+
+
+
+
+
+
 
 

@@ -107,6 +107,42 @@ run_butn.addEventListener("click", () => {
 })
 
 
+//logo hover-effect
+
+var gh_logo = document.getElementById("gh-img")
+
+gh_logo.addEventListener("mouseover",() => {
+
+	gh_logo.setAttribute("src","img\\gh_t.png")
+
+})
+
+gh_logo.addEventListener("mouseout",() => {
+
+	gh_logo.setAttribute("src","img\\gh.png")
+
+})
+
+
+
+var null_logo = document.getElementById("null-img")
+
+null_logo.addEventListener("mouseover",() => {
+
+	null_logo.setAttribute("src","img\\null_t.png")
+
+})
+
+null_logo.addEventListener("mouseout",() => {
+
+	null_logo.setAttribute("src","img\\null.png")
+
+})
+
+
+
+
+
 // slide
 var sub_menu_class = document.getElementsByClassName("option")
 var space_op1 = document.getElementById("Space-option1")
