@@ -129,13 +129,13 @@ var null_logo = document.getElementById("null-img")
 
 null_logo.addEventListener("mouseover",() => {
 
-	null_logo.setAttribute("src","img\\null_t.png")
+	null_logo.setAttribute("src","img\\null.png")
 
 })
 
 null_logo.addEventListener("mouseout",() => {
 
-	null_logo.setAttribute("src","img\\null.png")
+	null_logo.setAttribute("src","img\\null_t.png")
 
 })
 
