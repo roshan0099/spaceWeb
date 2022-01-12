@@ -171,9 +171,10 @@ h1{
 }
 
 #logo-area{
-  display : flex;
+/*   display : flex; */
   flex-wrap : wrap;
-  align-items : flex-start;
+  align-items : center;
+  text-align : center;
 /*   background: #3465a4; */
   padding : 2%;
   border: solid 1px;
