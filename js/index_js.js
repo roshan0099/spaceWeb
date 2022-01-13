@@ -497,3 +497,15 @@ particlesJS("particles-js", {
 });
 
 
+var play_ground = document.getElementById("pground")
+var space_transition = document.getElementById("space-trans")
+
+var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+  
+if (isMobile) {
+      play_ground.setAttribute("href", "#")
+      space_transition.setAttribute("href","#")
+} else {
+  play_ground.setAttribute("href", "textEditor.html")
+  space_transition.setAttribute("href","textEditor.html")
+}

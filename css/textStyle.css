@@ -1,27 +1,215 @@
-body{
-    background-color: #1C2333;
-}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color : white;
+  
+    
+  }
+  
+  body{
+    background-color : black;
+     background-color : rgb(255,255,240,);
+  
+  height : 100%;
+  /*   background-image: linear-gradient(to right,#41b3a3, #e27d60); */
+  }
+  html {
+    font-size: 62.5%;
+    font-family: "Courier New", monospace;
+  }
+
+
 
 textarea {
-background: url(http://i.imgur.com/2cOaJ.png);
+/* background: url(http://i.imgur.com/2cOaJ.png); */
 background-attachment: local;
 background-repeat: no-repeat;
-padding-left: 35px;
+padding-left: 15px;
+padding-right: 15px;
 
 padding-top: 10px;
 border-color: #ccc;
-width: 97%;
+
+width: 94%;
 /* height: 100vw; */
 font-size: 14px;
 line-height: 16px;
-color: black;
-background-color: #828899;
+color: rgb(15, 226, 15);
+/* background-color: #828899; */
+background-color: black;
+
 }
 
-/* .textarea-wrapper {
-display: inline-block;
-background-image: linear-gradient(#F1F1F1 50%, #F9F9F9 50%);
-background-size: 100% 32px;
-background-position: left 10px;
-} */
+textarea:focus{
+    outline: 0;
+}
 
+
+#container{
+    margin-left: 2%;
+}
+
+#btn_section{
+    margin : 2% 0%;
+}
+
+
+
+
+
+
+
+
+li {
+    list-style: none;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  .header{
+    border-bottom: 1px solid #E2E8F0;
+    transition : 1s;
+  }
+  
+  .header:hover{
+    background-color : rgb(0,0,0,0.7);
+      border-bottom: 1px solid green;
+  }
+  
+  .navbar {
+  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 1.5rem;
+    transition : 2s;
+  }
+  
+  
+  
+  
+  .drop {
+    display: none;
+  }
+  
+  
+  .options {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #101010;
+     align-items: center;
+  }
+  
+  .nav-menu {
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+     line-height: 45px;
+  }
+  
+  .nav-item {
+    font-family: "Courier New", monospace;
+    margin : 0px 15px;
+     align-items: center;
+  }
+  
+  .nav-link{
+    font-size: 1.6rem;
+    font-weight: 400;
+   
+  }
+  
+  .nav-link:hover{
+    color: white;
+    text-decoration : underline;
+  }
+  
+  .nav-logo {
+    font-size: 2.1rem;
+    
+   
+  }
+  
+
+.btn-style{
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border : 1px solid green;
+  transition : 1s;
+}
+
+.btn-style:hover{
+  cursor : pointer;
+  background-color : rgb(0,0,0,0.4);
+  border : 1px solid green;
+}
+
+/* drag style */
+
+
+#draggable {
+    background: rgb(0,0,0,0.6);
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    position: fixed;
+    left:20px ;top: 50%;
+    padding : 1%;
+    min-width: 25%;
+    min-height: 8%;
+    font-size:2rem;
+    border : 1px solid green;
+    cursor : grab;
+  
+  }
+  
+  .no-select {
+    user-select: none;
+  }
+
+
+  #dragg {
+    background: rgb(0,0,0,0.6);
+    
+    align-items: center;
+    padding : 2%;
+    position: fixed;
+    left:50%;top: 45%;
+    
+    min-height:2;
+    font-size:2rem;
+    border : 1px solid green;
+    cursor : grab;
+  }
+  
+.no-sel {
+    user-select: none;
+  }
+
+  #result_disp{
+    padding-top : 19px;
+  }
+
+ #ascii_inp{
+   background: rgb(0,0,0,0.6);
+   border : none;
+   border-bottom : 1px solid green;
+ }
+
+ #ascii_inp:focus{
+   outline : none;
+ }

@@ -8,10 +8,55 @@
     <title>Space TE</title>
 </head>
 <body>
-    <div class="textarea-wrapper">
-        <textarea rows="30" cols="10"></textarea>
-      </div>
 
+    <header class="header">
+        <nav class="navbar">
+            <a href="index.html" class="nav-logo">S P A C E</a>
+            <!-- <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">DOCS</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">NULL</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">ABOUT</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link"></a>
+                </li>
+            </ul> -->
+            <div class="drop">
+                <span class="options"></span>
+                <span class="options"></span>
+                <span class="options"></span>
+            </div>
+        </nav>
+</header>
+
+    <div id = "container">
+        <div id = "btn_section">
+            <button id = "run_btn" class = "btn-style">RUN</button>
+            <button id = "ascii_btn" class = "btn-style">/+-*</button>
+        </div>
+        <div class="textarea-wrapper">
+            <textarea rows="30" cols="10" id = "terminal"></textarea>
+        </div>
+
+        <div id="draggable" class="no-select" style="display: none;">
+            <div id = "display-result"></div>
+        </div>
+
+        <div id="dragg" class="no-sel" style="display: none;">
+
+            <input type="text" id = "ascii_inp">
+            <div id = "result_disp" style="display: none;"></div>
+            <!-- <button id = "convert"> -> </button> -->
+
+        </div>
+
+    </div>
 </body>
 <script src="js/text_js.js"></script>
 </html>
+
